@@ -1,19 +1,34 @@
-Olá, Alunos! Nesta atividade MAPA, iremos abordar o levantamento das necessidades de um sistema de Controle de Vendas, levando em consideração o contexto descrito a seguir: 
+Olá, Alunos! Nesta atividade MAPA, iremos abordar o levantamento das necessidades de um sistema de Controle de
+Vendas, levando em consideração o contexto descrito a seguir: 
 
 Necessidade do sistema:
  
-- O PDVSHOP será um sistema de controle de vendas cujo objetivo é fazer todo o controle de entrada/saída de mercadorias de uma loja física.
+- O PDVSHOP será um sistema de controle de vendas cujo objetivo é fazer todo o controle de entrada/saída de
+mercadorias de uma loja física.
  
-- Quanto à arquitetura, o sistema utilizará a arquitetura cliente/servidor, no qual existirá um servidor de banco de dados centralizando todas as informações do sistema, e em cada máquina, o cliente poderá ter acesso aplicação  e será executada  os dados nesse servidor de banco de dados. A aplicação será desenvolvida com tecnologia WEB e acessada via Intranet.
+- Quanto à arquitetura, o sistema utilizará a arquitetura cliente/servidor, no qual existirá um servidor de
+banco de dados centralizando todas as informações do sistema, e em cada máquina, o cliente poderá ter acesso
+aplicação  e será executada  os dados nesse servidor de banco de dados. A aplicação será desenvolvida com
+tecnologia WEB e acessada via Intranet.
  
-- O sistema deverá contemplar informações de clientes e fornecedores tais como informações básicas, documentos, endereçamento e contatos.
-- Todo fornecedor é responsável pelo processo de entrada de Produto que é feito por meio de uma compra. Esses Produtos deverão ter estoque controlado para que só possa ser vendido o material em estoque e devem possuir aos grupos de produtos.
-- Deverá ser verificado também produtos que estão fora do prazo de validade. Todo cliente é responsável pelo processo de saída de Produto que é feito por meio de uma venda, pois ela  poderá ser à vista ou a prazo e terá diversos tipos de pagamento, Ex: PIX, Cartão, Dinheiro, Cheque etc.
-- Além do processo de Entrada/Saída via Fornecedor/Cliente, o Sistema deverá contemplar uma rotina de ajuste de estoque, no qual o usuário poderá fazer outros lançamentos em estoque como a de Produto recebidas por brindes(entrada), ou Produto baixadas por vencimento/quebra/descarte(saída).
-- A compra e a venda de Produto irão gerar as contas a pagar e a receber respectivamente. As contas deverão estar agrupadas em um caixa diário. Lançamentos manuais no caixa poderão ser feito para retirada e devolução de pequenas quantias.
+- O sistema deverá contemplar informações de clientes e fornecedores tais como informações básicas, documentos,
+endereçamento e contatos.
+- Todo fornecedor é responsável pelo processo de entrada de Produto que é feito por meio de uma compra. Esses
+Produtos deverão ter estoque controlado para que só possa ser vendido o material em estoque e devem possuir
+aos grupos de produtos.
+- Deverá ser verificado também produtos que estão fora do prazo de validade. Todo cliente é responsável pelo
+processo de saída de Produto que é feito por meio de uma venda, pois ela  poderá ser à vista ou a prazo e terá
+diversos tipos de pagamento, Ex: PIX, Cartão, Dinheiro, Cheque etc.
+- Além do processo de Entrada/Saída via Fornecedor/Cliente, o Sistema deverá contemplar uma rotina de ajuste de
+estoque, no qual o usuário poderá fazer outros lançamentos em estoque como a de Produto recebidas por brindes
+(entrada), ou Produto baixadas por vencimento/quebra/descarte(saída).
+- A compra e a venda de Produto irão gerar as contas a pagar e a receber respectivamente. As contas deverão
+estar agrupadas em um caixa diário. Lançamentos manuais no caixa poderão ser feito para retirada e devolução de
+pequenas quantias.
 - O software deverá ter a preocupação com requisitos legais e tributários.
  
-Considerando a descrição anterior, você como Engenheiro (a) de Software da empresa desenvolvedora do sistema de Controle de Vendas, produza os seguintes itens.
+Considerando a descrição anterior, você como Engenheiro (a) de Software da empresa desenvolvedora do sistema
+de Controle de Vendas, produza os seguintes itens.
 
 1. Requisitos funcionais;
 2. Requisitos não funcionais;
@@ -22,14 +37,19 @@ Considerando a descrição anterior, você como Engenheiro (a) de Software da em
 5. Diagrama de Classes.
 
 COMO ENTREGAR A SUA ATIVIDADE:
-- O arquivo gerado na atividade deverá ser produzido em qualquer editor de texto e poderá ser entregue com a extensão (.doc), (.docx) ou (.pdf) e anexado no ambiente da Atividade (no STUDEO).
+- O arquivo gerado na atividade deverá ser produzido em qualquer editor de texto e poderá ser entregue com a
+extensão (.doc), (.docx) ou (.pdf) e anexado no ambiente da Atividade (no STUDEO).
 - Verifique seu arquivo antes de enviar, pois só é permitido o envio de um único arquivo. 
 
 DICAS PARA A REALIZAÇÃO DA ATIVIDADE:
-1. Durante as aulas, o professor irá fornecer dicas que podem ser utilizadas para a confecção das suas atividades, sendo assim, é de suma importância participar da aula ao vivo, ou assisti-las posteriormente.
+1. Durante as aulas, o professor irá fornecer dicas que podem ser utilizadas para a confecção das suas
+atividades, sendo assim, é de suma importância participar da aula ao vivo, ou assisti-las posteriormente.
 2. Assista ao vídeo explicativo da atividade no link: https://youtu.be/hgBX49WJA8w
 3. Assista às aulas conceituais da disciplina das unidades II, III e IV. 
 
 ATENÇÃO
-Durante a disciplina, procure sanar suas dúvidas pontuais em relação ao conteúdo relacionado à atividade. Porém não são permitidas correções parciais, ou seja, enviar para que o professor possa fazer uma avaliação previa e retornar para que o aluno possa ajustar e enviar novamente. Isso não é permitido, pois descaracteriza o processo de avaliação.
+Durante a disciplina, procure sanar suas dúvidas pontuais em relação ao conteúdo relacionado à atividade. Porém
+não são permitidas correções parciais, ou seja, enviar para que o professor possa fazer uma avaliação previa
+e retornar para que o aluno possa ajustar e enviar novamente. Isso não é permitido, pois descaracteriza o
+processo de avaliação.
 Por favor, não insista.!!
