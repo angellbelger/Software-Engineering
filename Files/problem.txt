@@ -1,55 +1,70 @@
-Olá, Alunos! Nesta atividade MAPA, iremos abordar o levantamento das necessidades de um sistema de Controle de
-Vendas, levando em consideração o contexto descrito a seguir: 
+A Engenharia de Software surgiu, principalmente, para aproximar e dar precisão a todo o processo que envolve
+a concepção, desenvolvimento e manutenção de um software.  Sabendo que o bom processo de desenvolvimento de
+software, passa em sua grande parte pelo levantamento de requisitos e diagramação de alguns artefatos, que
+auxiliam e norteiam o desenvolvimento do sistema, observe o estudo de caso, a seguir, que apresenta diversas
+regras de negócios, que após exploradas, devem ser formalizadas em artefatos que possam modelar o sistema
+proposto.
 
-Necessidade do sistema:
+Com a desafiadora situação econômica, Mauro, empresário e dono de uma empresa de eventos, deseja modificar
+drasticamente a forma de oferecer seus serviços de eventos para seus clientes. Antigamente, Mauro aguardava
+que os clientes entrassem em contato e locassem seus espaços físicos para realizar eventos fechados. Porém,
+agora, devido algumas restrições ligadas à pandemia, Mauro deseja criar um sistema no qual seus clientes possam
+acessar e contratar determinados serviços para realização de eventos em suas propriedades particulares.
+
+Para todas as ações descritas, a seguir, será necessário que o usuário possa Autenticar seu Acesso, a partir
+do seu login e senha. E sendo assim, existirá uma política definida na descrição das funcionalidades que
+definem o que cada perfil de acesso (Administrador ou Cliente) pode fazer no sistema.
+
+Para isso, Mauro precisa que o sistema possa ser capaz de manter o cadastro de usuários ao sistema de forma
+autenticada, definindo o perfil de acesso como: Administrador (acesso do Mauro), Cliente (acesso dos seus
+clientes). Para o cadastro de acesso ao sistema, basta ser informado o nome, cpf, senha e a definição do
+Perfil de acesso (Administrador e Cliente). Tanto o Administrador quanto o Cliente podem manter usuários do
+sistema, sendo que o Administrador pode manter todos os usuários e o seu próprio, enquanto cliente pode manter
+exclusivamente seu próprio usuário.
+
+O sistema deve manter um catálogo de categoria de eventos (cadastrado pelo Administrador), tais como
+Jantar, Aniversário, Comemoração, Confraternização etc. Sendo que a categoria de evento possui apenas o
+cadastro do nome da categoria e uma descrição. Além de cadastrar categoria de eventos, o sistema deve permitir
+manter Itens de evento (cadastrado pelo Administrador), sendo que cada item de evento possui uma ou mais
+categorias de evento, um nome, uma descrição, um valor de custo e um valor de aluguel e também a quantidade
+de itens disponíveis.
+
+O sistema também poderá cadastrar Eventos Prontos disponíveis para locação (cadastrado pelo Administrador), já
+possuindo uma categoria de evento e um conjunto de itens padrões para esse evento. Ex.: Mauro cadastra um
+“Evento Pronto” chamado “Festa Final de Ano”, classificando na categoria “Confraternização”. Por padrão, ele
+cadastra diversos itens (e suas quantidades) neste evento pronto, tal como: “Bola de Luz”, “Cervejeira
+Vertical”, “Caixa de Som”, “Mesa de Som”, “Mesa”, “Cadeiras”. Outro possível exemplo de “Evento Pronto” seria
+um evento chamado “Jantar Familiar”, da categoria “Jantar” com os seguintes itens cadastrados, “Conjunto de
+Jantar”, “Fondue”, “Balde de Gelo”, “Taças de Champagne”, “Champagne”, “Tábua de Frios”. Assim sendo o
+registro de um Evento Pronto deve possuir um nome e uma descrição.
+
+Para a contratação, o cliente necessariamente cria um Contrato, informando qual o Evento Pronto escolhido, uma
+data, endereço para entrega e forma de pagamento (dinheiro, pix, cartão de crédito ou cartão de débito). O
+contrato possui três status padrões: Solicitado, Aprovado e Cancelado. Sendo que, quando o cliente cria o
+Contrato, este vai automaticamente para o status “Solicitado”, e o Administrador do sistema poderá acessá-lo
+para Aprovar Contratos, podendo assim alterar o status de um contrato criado por algum cliente para
+“Aprovado” no caso de verificar que o pagamento foi efetuado com sucesso ou “Cancelado”, podendo inclusive
+justificar o cancelamento em um campo comentário no Contrato. Sendo assim, essa ação do administrador de
+Aprovar Contratos irá obrigatoriamente definir uma ação na funcionalidade do Contrato de algum cliente.
+
+Vale destacar, que todas as classes devem possuir em comum um atributo que definirá sua chave primária do
+registro no banco de dados, sendo que por padrão o projeto definirá o nome desse atributo como ID.
+
+Observando o caso de uso exposto anterior, crie os seguintes artefatos da engenharia de software:
+1. Identifique e apresente a lista de atores;
+2. Identifique e apresente a lista de funcionalidades do sistema;
+3. Construa o Diagrama de Caso de Uso;
+4. Construa o Diagrama de Classes.
  
-- O PDVSHOP será um sistema de controle de vendas cujo objetivo é fazer todo o controle de entrada/saída de
-mercadorias de uma loja física.
- 
-- Quanto à arquitetura, o sistema utilizará a arquitetura cliente/servidor, no qual existirá um servidor de
-banco de dados centralizando todas as informações do sistema, e em cada máquina, o cliente poderá ter acesso
-aplicação  e será executada  os dados nesse servidor de banco de dados. A aplicação será desenvolvida com
-tecnologia WEB e acessada via Intranet.
- 
-- O sistema deverá contemplar informações de clientes e fornecedores tais como informações básicas, documentos,
-endereçamento e contatos.
-- Todo fornecedor é responsável pelo processo de entrada de Produto que é feito por meio de uma compra. Esses
-Produtos deverão ter estoque controlado para que só possa ser vendido o material em estoque e devem possuir
-aos grupos de produtos.
-- Deverá ser verificado também produtos que estão fora do prazo de validade. Todo cliente é responsável pelo
-processo de saída de Produto que é feito por meio de uma venda, pois ela  poderá ser à vista ou a prazo e terá
-diversos tipos de pagamento, Ex: PIX, Cartão, Dinheiro, Cheque etc.
-- Além do processo de Entrada/Saída via Fornecedor/Cliente, o Sistema deverá contemplar uma rotina de ajuste de
-estoque, no qual o usuário poderá fazer outros lançamentos em estoque como a de Produto recebidas por brindes
-(entrada), ou Produto baixadas por vencimento/quebra/descarte(saída).
-- A compra e a venda de Produto irão gerar as contas a pagar e a receber respectivamente. As contas deverão
-estar agrupadas em um caixa diário. Lançamentos manuais no caixa poderão ser feito para retirada e devolução de
-pequenas quantias.
-- O software deverá ter a preocupação com requisitos legais e tributários.
- 
-Considerando a descrição anterior, você como Engenheiro (a) de Software da empresa desenvolvedora do sistema
-de Controle de Vendas, produza os seguintes itens.
-
-1. Requisitos funcionais;
-2. Requisitos não funcionais;
-3. Lista de Use Case;
-4. Diagrama de Use Case;
-5. Diagrama de Classes.
-
-COMO ENTREGAR A SUA ATIVIDADE:
-- O arquivo gerado na atividade deverá ser produzido em qualquer editor de texto e poderá ser entregue com a
-extensão (.doc), (.docx) ou (.pdf) e anexado no ambiente da Atividade (no STUDEO).
-- Verifique seu arquivo antes de enviar, pois só é permitido o envio de um único arquivo. 
-
-DICAS PARA A REALIZAÇÃO DA ATIVIDADE:
-1. Durante as aulas, o professor irá fornecer dicas que podem ser utilizadas para a confecção das suas
-atividades, sendo assim, é de suma importância participar da aula ao vivo, ou assisti-las posteriormente.
-2. Assista ao vídeo explicativo da atividade no link: https://youtu.be/hgBX49WJA8w
-3. Assista às aulas conceituais da disciplina das unidades II, III e IV. 
-
-ATENÇÃO
-Durante a disciplina, procure sanar suas dúvidas pontuais em relação ao conteúdo relacionado à atividade. Porém
-não são permitidas correções parciais, ou seja, enviar para que o professor possa fazer uma avaliação previa
-e retornar para que o aluno possa ajustar e enviar novamente. Isso não é permitido, pois descaracteriza o
-processo de avaliação.
-Por favor, não insista.!!
+ATENÇÃO:
+- O arquivo deve ser enviado em formato .doc ou .pdf.
+- Para a entrega desta atividade é obrigatória a utilização do arquivo Template do MAPA, disponível no Material
+da Disciplina.
+- Plágios e cópias indevidas serão penalizadas com nota zero.
+- Use a criatividade, não há um único tipo de resposta, porém os itens devem ser atendidos de forma adequada,
+ou seja, precisam ser coerentes.
+- Antes de enviar o arquivo, certifique-se de que atendeu a todos os itens solicitados. Após o envio não são
+permitas alterações. Por favor, não insista.
+- Não são permitidas correções parciais no decorrer do módulo, ou seja, o famoso: “professor veja se minha
+atividade está certa?”. Isso invalida seu processo avaliativo. Lembre-se que a interpretação da atividade
+também faz parte da avaliação.
