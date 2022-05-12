@@ -11,7 +11,7 @@ int main(){
         printf("\nError\n");
     }else {
         *p = 54;
-        printf("Pointer adress: %p\n", p);
+        printf("Pointer adress: %p\n", &p);
         printf("The value = %i\n", *p);
     }
     return 0;
