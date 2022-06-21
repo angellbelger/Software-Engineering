@@ -48,7 +48,7 @@ void show_elements(){
 // menu
 void show_menu(){
     printf("\n--------------------\n");
-    printf("\n1 - Add element.\n2 - Remove element.\n3 - Show elements.\n");
+    printf("\n1 - Add element.\n2 - Remove element.\n3 - Show elements.\n4 - Exit.\n");
     printf("\n--------------------\n");
 }
 
@@ -79,7 +79,7 @@ int main(void){
             break;
 
         default:
-            printf("Please, type a valid option.");
+            printf("\033[31mPlease, type a valid option.\033[m");
             break;
         }
     } while (option != 4);
