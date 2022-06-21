@@ -20,6 +20,18 @@ void push(int element){
     }
 }
 
+void pop(){
+    int element;
+    if (pilha.topo == pilha.ini){
+        printf("It is empty.\n");
+
+    }else{
+        pilha.topo--;
+        element = pilha.dados[pilha.topo];
+        return element;
+    }
+}
+
 int main(){
     printf("\nhello, world.\n");
 
