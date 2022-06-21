@@ -10,7 +10,7 @@ int main(void){
 
    int *p;
 
-   p = (int *) malloc(4);
+   p = (int *) malloc(sizeof(int));
 
    if (p == NULL){
       printf("Erro\n");
