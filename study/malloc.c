@@ -17,6 +17,7 @@ int main(void){
    }else {
       *p = 10;
       printf("The value of x = %i\n", *p);
+      printf("Adress: %p\n", &p);
 
       free(p);
    }
