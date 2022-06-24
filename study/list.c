@@ -88,4 +88,27 @@ void lista_remover(ptr_no lista){
     }
     if (lista->dado == dado){
         atual->proximo = lista->proximo;
+    }
+}
+
+//Desenha o conteúdo da Lista na tela
+void lista_mostrar(ptr_no lista){
+    system("cls");
+    while(1) {
+        printf("%d, ", lista->dado);
+        if (lista->proximo == NULL){
+        break;
         }
+        lista = lista->proximo;
+    }
+}
+
+//Desenha o conteúdo da Lista na tela
+void lista_mostrar_2(ptr_no lista){
+    system("cls");
+    while(lista->proximo != NULL) {
+        printf("%d, ", lista->dado);
+        lista = lista->proximo;
+    }
+    printf("%d, ", lista->dado);
+}
