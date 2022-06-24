@@ -50,21 +50,49 @@ void show_list(ptr_no list){
     while (1)
     {
         printf("%i", list->data);
+        if (list->prox == NULL){
+            break;
+        }
+    }
+    list = list->prox;
+    
+}
+
+void show_list2(ptr_no list){
+    while (list->prox != NULL) {
+        printf("%i", list->data);
         list = list->prox;
     }
-    printf("%i", list->data);
-    
+    printf("%i, ", list->data);
 }
 
 //show menu
 void show_menu(){
     show_list(list);
-    printf("--------------------");
+    printf("\n--------------------\n");
     printf("\nChoose option: ");
-    printf("1 - Insert in the final list\n");
+    printf("\n1 - Insert in the final list\n");
     printf("2 - Remove element\n");
     printf("3 - Exit");
-    printf("--------------------");
+    printf("\n--------------------\n");
+}
+
+//select menu
+void select_menu(int option){
+    switch (option)
+    {
+    case 1:
+        insert(list);
+        break;
+    
+    case 2:
+        removed(list);
+        break;
+    
+    default:
+        printf("Please, type a valid option.\n");
+        break;
+    }
 }
 
 // main function
@@ -81,6 +109,7 @@ int main(void){
     {
         show_menu();
         scanf("%i", &option);
+        select_menu(option);
     }
     
 }
