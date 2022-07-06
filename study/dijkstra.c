@@ -37,13 +37,13 @@ int main(int argc, char**argv) {
 //show menu
 void menu_mostrar(void) {
   
-  printf("\nAlgoritmo de Dijasktra\n");
+  printf("\n\033[35m    Algoritmo de Dijasktra    \033[m\n");
   printf("\n------------------------------\n");
   printf("\t\033[35m1\033[m - Adicionar grafo\n");
   printf("\t\033[35m2\033[m - Menor rota\n");
   printf("\t\033[35m3\033[m - Sair");
   printf("\n------------------------------\n");
-  printf("opcao: ");
+  printf("\033[35mopcao:\033[m ");
 }
 
 void grafo_criar(void) {
@@ -71,16 +71,16 @@ void grafo_criar(void) {
     system("clear");
     printf("Entre com as arestas:\n");
     do {
-      printf("\033[34mOrigem\033[m (entre 1 e %d ou '0' para sair): ", vertices);
+      printf("\033[35mOrigem\033[m (entre 1 e %d ou digite '0' para sair): ", vertices);
       scanf("%i", &origem);
     } while (origem < 0 || origem > vertices);
     if (origem){
       do {
-        printf("\033[34mDestino\033[m (entre 1 e %i, menos %i): ", vertices, origem);
+        printf("\033[35mDestino\033[m (entre 1 e %i, menos %i): ", vertices, origem);
         scanf("%d", &destino);
       } while (destino < 1 || destino > vertices || destino == origem);
       do {
-        printf("\033[34mCusto\033[m: \033[32mR$\033[m");
+        printf("\033[35mCusto\033[m: \033[32mR$\033[m");
         scanf("%f", &custo);
       } while (custo < 0);
       custos[(origem-1) * vertices + destino - 1] = custo;
@@ -91,7 +91,7 @@ void grafo_criar(void) {
 void grafo_procurar(void) {
   int i, j;
   system("clear");
-  printf("Lista de menores rotas no grafo: \n");
+  printf("Rotas: \n");
   for (i = 1; i <= vertices; i++) {
     for (j = 1; j <= vertices; j++) {
       dijkstra(vertices, i, j, custos);
