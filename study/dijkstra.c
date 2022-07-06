@@ -2,30 +2,29 @@
 #include <stdlib.h>
 #include <math.h>
 
-//variaveis
+//declaration of variables
 int destino, origem, vertices = 0;
 float custo;
 float *custos = NULL;
 
-//prototipacao
+//prototyping
 void dijkstra(int vertices, int origem, int destino, float *custo);
-void menu_mostrar(void);
-void grafo_procurar(void);
-void grafo_criar(void);
+void show_menu(void);
+void search_grafo(void);
+void create_grafo(void);
 
-// main function
 int main(int argc, char**argv) {
   int opt = -1;
   do {
-    menu_mostrar();
+    show_menu();
     scanf("%d", &opt);
     switch(opt){
       case 1:
-        grafo_criar();
+        create_grafo();
         break;
       case 2:
         if(vertices > 0){
-          grafo_procurar();
+          search_grafo();
         }
       break;
     }
@@ -33,9 +32,7 @@ int main(int argc, char**argv) {
   return 0;
 }
 
-
-//show menu
-void menu_mostrar(void) {
+void show_menu(void) {
   
   printf("\n\033[35m    Algoritmo de Dijasktra    \033[m\n");
   printf("\n------------------------------\n");
@@ -46,7 +43,7 @@ void menu_mostrar(void) {
   printf("\033[35mopcao:\033[m ");
 }
 
-void grafo_criar(void) {
+void create_grafo(void) {
   do {
     printf("\nNumero de vertices: ");
     scanf("%d", &vertices);
@@ -61,10 +58,8 @@ void grafo_criar(void) {
     exit(-1);
   }
 
-  //preenchendo matriz com -1
   for (int i = 0; i <= vertices * vertices; i++){
     custos[i] = -1;
-    // a funcao printf criou um array com 26 posicoes para 5 vertices, caso chamado de iteracao.
   }
 
   do {
@@ -88,7 +83,7 @@ void grafo_criar(void) {
   } while (origem);
 }
 
-void grafo_procurar(void) {
+void search_grafo(void) {
   int i, j;
   system("clear");
   printf("Rotas: \n");
@@ -102,11 +97,10 @@ void grafo_procurar(void) {
 void dijkstra(int vertices, int origem, int destino, float *custos) {
   int i, v, cont = 0;
   int *ant, *tmp;
-  int *z; // vertices para caminhos minimos
+  int *z;
   double min;
-  double dist[vertices]; //vetor com os custos dos caminhos
+  double dist[vertices]; //vector with the costs of the paths
 
-  //aloca as linhas da matriz
   ant = (int *) calloc(vertices, sizeof(int *));
   if (ant == NULL) {
     printf("\033[31mMemoria insuficiente.\033[m");
@@ -147,7 +141,7 @@ void dijkstra(int vertices, int origem, int destino, float *custos) {
         }
       }
     }
-    //calculando a distancia dos novos vizinhos
+    //calculating the distance of new neighbors
     if (min != HUGE_VAL && v != destino - 1){
       z[v] = 1;
       for (i = 0;i < vertices;i++){
