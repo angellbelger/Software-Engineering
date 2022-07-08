@@ -43,13 +43,10 @@ void preorder(struct node *root)
     if(root == NULL)
         return;
 
-    //visit the root
     printf("%d ",root->key);
 
-    //traverse the left subtree
     preorder(root->left);
 
-    //traverse the right subtree
     preorder(root->right);
 }
 
