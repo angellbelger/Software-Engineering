@@ -1,8 +1,3 @@
-/*
- * Program  : Preorder traversal of binary search tree
- * Language : C
- */
-
 #include<stdio.h>
 #include<stdlib.h>
 
@@ -13,7 +8,7 @@ struct node
     struct node *right;
 };
 
-//return a new node with the given value
+//retorna um novo nó com o valor dado
 struct node *getNode(int val)
 {
     struct node *newNode;
@@ -27,7 +22,7 @@ struct node *getNode(int val)
     return newNode;
 }
 
-//inserts nodes in the binary search tree
+//insere nós na árvore de busca binária
 struct node *insertNode(struct node *root, int val)
 {
      if(root == NULL)
@@ -42,7 +37,7 @@ struct node *insertNode(struct node *root, int val)
      return root;
 }
 
-//preorder traversal of the binary search tree
+//percurso de pré-ordem da árvore binária
 void preorder(struct node *root)
 {
     if(root == NULL)
@@ -61,17 +56,27 @@ void preorder(struct node *root)
 int main()
 {
    struct node *root = NULL;
+   int data;
+   char option;
 
-   root = insertNode(root,1);
-   root = insertNode(root, 8);
-   root = insertNode(root, 4);
-   root = insertNode(root, 9);
-   root = insertNode(root, 6);
-   root = insertNode(root, 4);
-   root = insertNode(root, 2);
-   root = insertNode(root, 5);
+   printf("Hello, world.");
 
-   preorder(root);
+   do
+   {
+       printf("\n---------------------------\n");
+       printf("\nDigite um numero: ");
+       scanf("%i", &data);
+       root = insertNode(root, data);
+       printf("\nDigite \033[36m'Y'\033[m para continuar ou \033[31m'N'\033[m para encerrar e ver o resultado.");
+       printf("\nDigite: [ \033[36mY\033[34m\033[m | \033[31mN\033[34m\033[m ]: ");
+       scanf(" %c", &option);
+   } while ( option != 'n');
+
+    printf("\nResultado em Pre-ordem:\033[36m ");
+    preorder(root);
+    printf("\n\033[m\033[31mPrograma finalizado.\033[m\n");
+
+    //Resultado em Pré-ordem com meu RA: 1 8 4 2 6 5 9 
 
    return 0;
 }
