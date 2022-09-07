@@ -65,7 +65,7 @@ list = [45,
 
 
 for c in range(0, 60):
-    if list[c] == 87 or list[c] == 88 or list[c] == 89 or list[c] == 90:
+    if list[c] >= 75 and list[c] < 81:
         x += 1
 
 print(f'Numero de unidades: {x}')
